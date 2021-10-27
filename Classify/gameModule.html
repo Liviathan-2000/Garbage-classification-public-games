@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="#">
+    <title>Title</title>
+    <link href="css/rubbish.css" rel="stylesheet" />
+    <link rel="stylesheet" href="icon/download/iconfont.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+</head>
+
+<body ondragstart="return false">
+    <!-- <embed src="背景音乐.mp3"  loop="true" controls='pausebutton' width="80" height="80" style="position: absolute">  -->
+    <!-- <audio src="背景音乐.mp3" loop="true" class="backgroundMusic "></audio> -->
+    <audio src="叮咚2.mp3" class="dingdong"></audio>
+
+    <div class="musicOnOff"><img src="pic/返回2.png"></div>
+
+    <div class="hint">
+        <!-- <img> -->
+        <img src="pic/勾.png">
+    </div>
+    <!-- 知识科普 -->
+    <div class="poScience">
+        <ul>
+            <li class="poScience_recycled">
+                <img src="pic/可回收对话.png">
+               
+            </li>
+
+            <li class="poScience_kitchenWaste">
+                <img src="pic/厨余对话.png">
+                <!-- <p class="button" style="background-image: url(./pic/返回2.png);background-size: 100%;background-repeat: no-repeat;"></p> -->
+            </li>
+
+            <li class="poScience_harmful">
+                <img src="pic/有害对话.png">
+                <!-- <p class="button" style="background-image: url(./pic/返回3.png);background-size: 100%;background-repeat: no-repeat;"></p> -->
+            </li>
+
+            <li class="poScience_other">
+                <img src="pic/其他对话.png">
+                <!-- <p class="button" style="background-image: url(./pic/返回4.png);background-size: 100%;background-repeat: no-repeat;"></p> -->
+            </li>
+
+        </ul>
+    </div>
+
+    <!--整个游戏界面-->
+    <div id="gameRange">
+        <p id='integral-text'>当前积分:<span id="integral">0</span></p>
+        <!--欢迎界面-->
+        <div id="welcomeScreenBack">
+            <div id="welcomeScreen">
+                <button id="button" type="button"></button>
+            </div>
+
+        </div>
+        <!-- 结束页面 -->
+        <div class="gameOverScreen">
+            <div>
+                <button type="button" value="" id="repeat"></button>
+            </div>
+        </div>
+
+        <!--垃圾桶-->
+        <div class="ash-bin">
+            <div id="ash-bin-can" style="left:15%">
+                <img src="pic/1.png" />
+            </div>
+            <div id="ash-bin-foodWaste" style="left:35%">
+                <img src="pic/2.png" />
+            </div>
+            <div id="ash-bin-cannot" style="left:55%">
+                <img src="pic/3.png" />
+            </div>
+            <div id="ash-bin-else" style="left:75%">
+                <img src="pic/4.png" />
+            </div>
+        </div>
+
+        <!--垃圾-->
+        <div id="rubbish">
+            <!--可回收垃圾-->
+            <div id="recycled">
+                <img src="pic/1可回收/1.png" />
+
+                <img src="pic/1可回收/2.png" />
+
+                <img src="pic/1可回收/3.png" />
+
+                <img src="pic/1可回收/4.png" />
+            </div>
+            <!--厨余垃圾-->
+            <div id="kitchenWaste">
+                <img src="pic/2厨余/1.png" />
+
+                <img src="pic/2厨余/2.png" />
+
+                <img src="pic/2厨余/3.png" />
+
+                <img src="pic/2厨余/4.png" />
+
+            </div>
+            <!--有害垃圾-->
+            <div id="harmful">
+                <img src="pic/3有害/1.png" />
+                <img src="pic/3有害/2.png" />
+                <!-- <img src="pic/3有害/3.png" /> -->
+                <img src="pic/3有害/4.png" />
+            </div>
+            <!--其他垃圾-->
+            <div id="other">
+                <img src="pic/4其他/1.png" />
+                <img src="pic/4其他/2.png" />
+                <img src="pic/4其他/3.png" />
+            </div>
+        </div>
+
+    </div>
+    </div>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

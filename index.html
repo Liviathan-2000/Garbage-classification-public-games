@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>这里是垃圾分类</title>
+    <link rel="stylesheet" type="text/css" href="homePage/css/index.css" />
+    <link rel="stylesheet" href="homePage/animate.css-main/animate.css" />
+    <link rel="stylesheet" type="text/css" href="homePage/css/peo_animated.css">
+    <link rel="stylesheet" href="homePage/icon/iconfont.css">
+    <script src="homePage/js/jquery-3.6.0.min.js"></script>
+
+</head>
+<body ondragstart="return false">
+    <audio src="homePage/pic/DEPAPEPE - いい日だったね。.mp3" loop='true'  class="backgroundMusic"></audio>
+    <div>
+        <!-- 跳动的地球 -->
+        <div class="earth">
+                <img src="homePage/pic/地球.png" class="earth1">
+
+            <!-- 最前端的文字 -->
+            <div class="earth_text">
+                <!-- <p class="earth_text1">从零开始的垃圾分类</p> -->
+                <!-- <p class="earth_text3">waste sorting</p> -->
+                <canvas id="title" class="title" width="565" height="166"></canvas>
+                <img src="homePage/pic/title2.png" class="img1">
+                <img src="homePage/pic/title1.png" class="img2">
+                
+            </div>
+            <div class="xiangxia">
+                <p class="iconfont icon-xiangxia2 xiangxia1"></p>
+                <p class="iconfont icon-xiangxia2 xiangxia2"></p>
+                <p class="iconfont icon-xiangxia2 xiangxia3"></p>
+            </div>
+            <!-- 过渡 -->
+            <div class="transitionLayer">
+                <img src="homePage/pic/城前1.png" class="img1">
+                <img src="homePage/pic/城后1.png" class="img2">
+                <img src="homePage/pic/隐前.png" class="img3">
+                <img src="homePage/pic/隐后.png" class="img4">
+                <!-- <img src="pic/过渡1.png"> -->
+            </div>
+        </div>
+
+        <div class="home">
+            <!-- 浮动的云 -->
+            <ul class="home_cloud">
+                <li class="cloud1"><img src="homePage/pic/云11_3.png"></li>
+                <li class="cloud2"><img src="homePage/pic/云11_4.png"></li>
+                <li class="cloud3"><img src="homePage/pic/云11_1.png"></li>
+                <li class="cloud4"><img src="homePage/pic/云11_2.png"></li>
+                <!-- <li class="cloud5"><img src="pic/云2.png"></li>
+                <li class="cloud6"><img src="pic/云3.png"></li>
+                <li class="cloud7"><img src="pic/云4.png"></li> -->
+            </ul>
+
+            <ul class="garbage">
+               <div class="wk">
+                <img src="homePage/pic/test/可回收.gif">
+               </div>
+                <div class="bj">
+                    <img src="homePage/pic/test/厨余.gif">
+                </div>
+                <div class="ts">
+                    <img src="homePage/pic/test/有害.gif">
+                </div>
+               <div class="ss">
+                <img src="homePage/pic/test/其他.gif">
+               </div>
+            </ul>
+        
+        </div>
+
+    </div>
+    <script src='homePage/js/index.js'></script>
+</body>
+
+</html>

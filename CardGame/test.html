@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <style>
+        html,body{
+            height: 100%;
+        }
+        @media (min-width: 48em) {}
+
+        :root {
+            --grid-unit: 25;
+            --grid-val: calc(100/var(--grid-unit));
+        }
+
+        .container {
+            width: calc(var(--grid-val)*12vw);
+            height: calc(var(--grid-val)*8vw);
+            display: grid;
+            /* 间隔 */
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            gap: calc(var(--grid-val)*0.2vw);
+        }
+
+        .div {
+            width: calc(var(--grid-val)*12vw);
+            height: calc(var(--grid-val)*8vw);
+            background-color: aquamarine;
+            right: 0;
+            left: 0;
+            margin: 0 auto;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+
+        }
+
+        .container>div {
+            background-color: beige;
+            border: 1px solid black;
+            text-align: center;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div">
+        <div class="container">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+    </div>
+
+
+    <script>
+
+    </script>
+</body>
+
+</html>

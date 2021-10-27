@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="icon/download/iconfont.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/index.css"/> -->
+    <title>Title</title>
+    <style>
+        @font-face {
+            font-family: muyao;
+            src: url('ttf/muyao.ttf')
+                /* IE9 */
+        }
+
+        :root {
+            --grid-unit: 25;
+            --grid-val: calc(100/var(--grid-unit));
+        }
+
+        html,
+        body {
+            height: 100%;
+            background-color: #222222;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1920px;
+            min-width: 1200px;
+            height: 100%;
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .bg-t1 {
+            background: url(./images/可回收垃圾.jpg) no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .bg-t2 {
+            background: url(./images/其他垃圾.jpg) no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .bg-t3 {
+            background: url(./images/厨余垃圾.jpg) no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .bg-t4 {
+            background: url(./images/有害垃圾.jpg) no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .box {
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .box .p {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        /* 操控所有标签的位置 */
+        .box .p img.per {
+            position: absolute;
+            bottom: 0;
+            transition: all 1s ease;
+            top: 30px;
+        }
+
+        .box .p1 img.per {
+            left: 40%;
+            opacity: 0;
+            transform: translateX(20%);
+            width: calc(var(--grid-val)*4.2vw);
+            height: calc(var(--grid-val)*11vw);
+        }
+
+        .box .p2 img.per {
+            left: 40%;
+            opacity: 0;
+            transform: translateX(20%);
+            width: calc(var(--grid-val)*6vw);
+            height: calc(var(--grid-val)*11vw);
+        }
+
+        .box .p3 img.per {
+            /* top: 6%; */
+            left: 30%;
+            opacity: 0;
+            transform: translateX(20%);
+            width: calc(var(--grid-val)*8vw);
+            height: calc(var(--grid-val)*11.5vw);
+
+        }
+
+        .box .p4 img.per {
+            left: 40%;
+            opacity: 0;
+            transform: translateX(-20%);
+            width: calc(var(--grid-val)*4.5vw);
+            height: calc(var(--grid-val)*11vw);
+        }
+
+        /* 人物显示 */
+        .box .p1.show img.per {
+            opacity: 1;
+            transform: translateX(0);
+            width: calc(var(--grid-val)*4.2vw);
+            height: calc(var(--grid-val)*11vw);
+        }
+
+        .box .p2.show img.per {
+            opacity: 1;
+            transform: translateX(0);
+            width: calc(var(--grid-val)*6vw);
+            height: calc(var(--grid-val)*11vw);
+        }
+
+        .box .p3.show img.per {
+            opacity: 1;
+            transform: translateX(0);
+            width: calc(var(--grid-val)*8vw);
+            height: calc(var(--grid-val)*11.5vw);
+        }
+
+        .box .p4.show img.per {
+            opacity: 1;
+            transform: translateX(0);
+            width: calc(var(--grid-val)*4.5vw);
+            height: calc(var(--grid-val)*11vw);
+        }
+
+
+        .box .p1 .name {
+            position: absolute;
+            z-index: 1000;
+            width: 100%;
+            height: 100px;
+            top: 0;
+            left: 0;
+            transform: translateX(-20%);
+            opacity: 0;
+            bottom: 43.5%;
+            /* background: url(./images/可回收按钮.png) no-repeat; */
+        }
+
+        .box .p2 .name {
+            position: absolute;
+            width: 100%;
+            height: 100px;
+            /* margin-top: 95px; */
+            top: 0;
+            left: 0;
+            transform: translateX(-20%);
+            opacity: 0;
+            bottom: 43.5%;
+            /* background: url(./images/可回收按钮.png) no-repeat; */
+        }
+
+        .box .p3 .name {
+            position: absolute;
+            width: 100%;
+            height: 100px;
+            /* margin-top: 95px; */
+            top: 0;
+            left: 0;
+            transform: translateX(-20%);
+            opacity: 0;
+            bottom: 48.5%;
+            /* background: url(./images/可回收按钮.png) no-repeat; */
+        }
+
+        .box .p4 .name {
+            position: absolute;
+            width: 100%;
+            height: 100px;
+            /* margin-top: 95px; */
+            top: 0;
+            left: 0;
+            transform: translateX(-20%);
+            opacity: 0;
+            bottom: 43.5%;
+            /* background: url(./images/可回收按钮.png) no-repeat; */
+        }
+
+        .box .p1.show .name,
+        .box .p2.show .name,
+        .box .p3.show .name,
+        .box .p4.show .name {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .box .p1.show .name img,
+        .box .p2.show .name img,
+        .box .p3.show .name img,
+        .box .p4.show .name img {
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+
+        .box .p1 .name img.per,
+        .box .p2 .name img.per,
+        .box .p3 .name img.per,
+        .box .p4 .name img.per {
+            opacity: 0;
+            transform: translateX(-100%);
+            transition: transform 1s, opacity 1s;
+        }
+
+        .box .p1 .name img.show,
+        .box .p2 .name img.show,
+        .box .p3 .name img.show,
+        .box .p4 .name img.show {
+            opacity: 1;
+            transform: translateX(0%);
+            z-index: 1006;
+            transition: transform 1s, opacity 1s;
+        }
+
+
+
+
+
+
+        #answers-text1,
+        #answers-text2,
+        #answers-text3,
+        #answers-text4 {
+            position: absolute;
+            top: 72%;
+            left: 27.5%;
+            width: 38ch;
+            /* transform: translate(-50%); */
+            font-size: 22px;
+            color: #333333;
+            /* line-height: 3px; */
+            font-family: muyao;
+            z-index: 9;
+            margin-left: 150px;
+        }
+
+        .p2 #answers-text1,
+        .p2 #answers-text2,
+        .p2 #answers-text3,
+        .p2 #answers-text4,
+        .p4 #answers-text1,
+        .p4 #answers-text2,
+        .p4 #answers-text3,
+        .p4 #answers-text4 {
+            position: absolute;
+            top: 72%;
+            left: 27.5%;
+            width: 38ch;
+            /* transform: translate(-50%); */
+            font-size: 22px;
+            color: #ffffff;
+            /* line-height: 3px; */
+            font-family: muyao;
+            z-index: 9;
+            margin-left: 150px;
+        }
+
+        .p1 #answers-text1::before,
+        .p1 #answers-text1::after {
+            display: block;
+            overflow: hidden;
+            width: 0;
+            white-space: nowrap;
+            animation: a1 2s steps(38) 1s forwards;
+            content: "";
+        }
+
+        .p1 #answers-text1:after {
+            animation: a2 2s steps(32) 1s forwards;
+            content: "我是柯灰，欢迎来到维斯特大陆";
+        }
+
+        .p1 #answers-text2::before,
+        .p1 #answers-text2::after {
+            display: block;
+            overflow: hidden;
+            width: 0;
+            white-space: nowrap;
+            /* font-family:  muyao; */
+            animation: a1 2s steps(38) 1s forwards;
+            content: "是的，就是你现在身处的大地，";
+        }
+
+        .p1 #answers-text2:after {
+            animation: a2 2s steps(32) 2s forwards;
+            content: "而我在这里等人。";
+        }
+
+        .p1 #answers-text3::before,
+        .p1 #answers-text3::after {
+            display: block;
+            overflow: hidden;
+            width: 0;
+            white-space: nowrap;
+            animation: a1 2s steps(38) 1s forwards;
+            content: "我在等寻找休息之地的旅行者，他在这里休息";
+        }
+
+        .p1 #answers-text3:after {
+            animation: a2 2s steps(32) 2s forwards;
+            content: "之后将会换上新的身份继续前往未知的旅途。";
+        }
+
+        .p1 #answers-text4::before,
+        .p1 #answers-text4::after {
+            display: block;
+            overflow: hidden;
+            width: 0;
+            white-space: nowrap;
+            animation: a1 2s steps(38) 1s forwards;
+            content: "是的，有来自纸类故乡的各种纸，生活中的金属，";
+        }
+
+        .p1 #answers-text4:after {
+            animation: a2 2s steps(32) 2s forwards;
+            content: "纺织品姑凉，塑料和各种玻璃";
+        }
+
+        /* p2 */
+        .p2 #answers-text1::before,
+        .p2 #answers-text1::after {
+            display: block;
+            overflow: hidden;
+            width: 0;
+            white-space: nowrap;
+            animation: a1 2s steps(38) 1s forwards;
+            content: "嗯，你好呀，旅行者，原来你听说过我呀";
+        }
+
+        .p2 #answers-text1:after {
+            animation: a2 2s steps(32) 2s forwards;
+            content: "";
+        }
+
+        .p2 #answers-text2::before,
+        .p2 #answers-text2::after {
+            display: block;
+            overflow: hidden;
+            width: 0;
+            white-space: nowrap;
+            animation: a1 2s steps(38) 1s forwards;
+            content: "是的，刚刚我的大棒骨朋友竟找错了人，";
+        }
+
+        .p2 #answers-text2:after {
+            animation: a2 2s steps(32) 2s forwards;
+            content: "跑到楚渝姐姐那里去了。";
+        }
+
+        .p2 #answers-text3::before,
+        .p2 #answers-text3::after {
+            display: block;
+            overflow: hidden;
+            width: 0;
+            white-space: nowrap;
+            animation: a1 2s steps(38) 1s forwards;
+            content: "嗯，还是楚渝姐姐提醒的它，";
+        }
+
+        .p2 #answers-text3:after {
+            animation: a2 2s steps(32) 2s forwards;
+            content: "但愿它下次能记得它应该来找我。";
+        }
+
+        .p2 #answers-text4::before,
+        .p2 #answers-text4::after {
+            display: block;
+            overflow: hidden;
+            width: 0;
+            white-space: nowrap;
+            animation: a1 2s steps(38) 1s forwards;
+            content: "嗯我的类型比较多，当他们不去";
+        }
+
+        .p2 #answers-text4:after {
+            animation: a2 2s steps(32) 2s forwards;
+            content: "其他几个哥哥姐姐那的时候就会来我这里。";
+        }
+
+        /* 厨余p3 */
+        .p3 #answers-text1::before,
+        .p3 #answers-text1::after {
+            display: block;
+            overflow: hidden;
+            width: 0;
+            white-space: nowrap;
+            animation: a1 2s steps(38) 1s forwards;
+            content: "原来是旅行者小可爱呀！";
+        }
+
+        .p3 #answers-text1:after {
+            animation: a2 2s steps(32) 2s forwards;
+            content: "";
+        }
+
+        .p3 #answers-text2::before,
+        .p3 #answers-text2::after {
+            display: block;
+            overflow: hidden;
+            width: 0;
+            white-space: nowrap;
+            animation: a1 2s steps(38) 1s forwards;
+            content: "嗯嗯，来自沣水之乡的旅行者往往会来找我，";
+        }
+
+        .p3 #answers-text2:after {
+            animation: a2 2s steps(32) 2s forwards;
+            content: "但刚刚有个粗心的大棒骨朋友竟走错了路。";
+        }
+
+        .p3 #answers-text3::before,
+        .p3 #answers-text3::after {
+            display: block;
+            overflow: hidden;
+            width: 0;
+            white-space: nowrap;
+            animation: a1 2s steps(38) 1s forwards;
+            content: "大棒骨太难分解啦，";
+        }
+
+        .p3 #answers-text3:after {
+            animation: a2 2s steps(32) 2s forwards;
+            content: "它旅行的归途只有淇挞能为他指引。";
+        }
+
+        .p3 #answers-text4::before,
+        .p3 #answers-text4::after {
+            display: block;
+            overflow: hidden;
+            width: 0;
+            white-space: nowrap;
+            animation: a1 2s steps(38) 1s forwards;
+            content: "来找我的旅行者往往都极脆弱，";
+        }
+
+        .p3 #answers-text4:after {
+            animation: a2 2s steps(32) 2s forwards;
+            content: "它们在泥土里呆上几天就成了新泥土";
+        }
+
+
+        /* 其他垃圾 */
+        .p4 #answers-text1::before,
+        .p4 #answers-text1::after {
+            display: block;
+            overflow: hidden;
+            width: 0;
+            white-space: nowrap;
+            animation: a1 2s steps(38) 1s forwards;
+            content: "是你啊，旅行者，我是游海。";
+        }
+
+        .p4 #answers-text1:after {
+            animation: a2 2s steps(32) 2s forwards;
+            content: "";
+        }
+
+        .p4 #answers-text2::before,
+        .p4 #answers-text2::after {
+            display: block;
+            overflow: hidden;
+            width: 0;
+            white-space: nowrap;
+            animation: a1 2s steps(38) 1s forwards;
+            content: "我在等那些携带者危险因子的旅行者。";
+        }
+
+        .p4 #answers-text2:after {
+            animation: a2 2s steps(32) 2s forwards;
+            content: "";
+        }
+
+        .p4 #answers-text3::before,
+        .p4 #answers-text3::after {
+            display: block;
+            overflow: hidden;
+            width: 0;
+            white-space: nowrap;
+            animation: a1 2s steps(38) 1s forwards;
+            content: "是的，它们将自己的能量散播到世界，";
+        }
+
+        .p4 #answers-text3:after {
+            animation: a2 2s steps(32) 2s forwards;
+            content: "能量耗尽时会产生危险因子。";
+        }
+
+        .p4 #answers-text4::before,
+        .p4 #answers-text4::after {
+            display: block;
+            overflow: hidden;
+            width: 0;
+            white-space: nowrap;
+            animation: a1 2s steps(38) 1s forwards;
+            content: "是的，这是一件非常严肃的事情，绝对不能出错";
+        }
+
+        .p4 #answers-text4:after {
+            animation: a2 2s steps(32) 2s forwards;
+            content: "若不及时处理，会对世界产生极大的危害。";
+        }
+
+        @keyframes a1 {
+            to {
+                width: 70ch;
+            }
+        }
+
+        @keyframes a2 {
+            to {
+                width: 60ch;
+            }
+        }
+
+        .box .p1.show .answers img.show,
+        .box .p2.show .answers img.show,
+        .box .p3.show .answers img.show,
+        .box .p4.show .answers img.show {
+            width: 50%;
+            height: 60%;
+            position: absolute;
+            z-index: 8;
+            left: 25%;
+            opacity: 1;
+            transition: top 1s, opacity 1s;
+            /* transform: translateY(10%); */
+            top: 35%;
+        }
+
+        /* 回答 */
+        .box .p1 .answers img,
+        .box .p2 .answers img,
+        .box .p3 .answers img,
+        .box .p4 .answers img {
+            width: 50%;
+            height: 60%;
+            position: absolute;
+            z-index: 8;
+            left: 25%;
+            opacity: 0;
+            top: 35%;
+        }
+
+        .box .p1.show .answers img,
+        .box .p2.show .answers img,
+        .box .p3.show .answers img,
+        .box .p4.show .answers img {
+            width: 50%;
+            height: 60%;
+            position: absolute;
+            z-index: 8;
+            left: 25%;
+            opacity: 0;
+            top: 60%;
+            transition: top 1s, opacity 1s;
+        }
+
+        /* 问题显示 */
+        .p1.show .questions div img,
+        .p2.show .questions div img,
+        .p3.show .questions div img,
+        .p4.show .questions div img {
+            opacity: 1;
+            /* transform: translateX(0%) ; */
+            transition: transform 1s, opacity 1s;
+            transform: rotateZ(10deg) translateX(-110%);
+            z-index: 1007;
+        }
+
+        .p1.show .questions div.show img,
+        .p2.show .questions div.show img,
+        .p3.show .questions div.show img,
+        .p4.show .questions div.show img {
+            transform: translateX(-35%) rotateZ(10deg);
+        }
+
+        .p1.show .questions div.show img.show,
+        .p2.show .questions div.show img.show,
+        .p3.show .questions div.show img.show,
+        .p4.show .questions div.show img.show {
+            transform: translateX(-5%) rotateZ(10deg);
+        }
+
+
+
+
+        .questions img {
+            /* left: 0!important; */
+            opacity: 0;
+            /* position: absolute; */
+            /* z-index: ; */
+            transform: translateX(-100%);
+            transition: transform 1s, opacity 1s;
+        }
+
+        .questions {
+            position: absolute;
+            top: 20%;
+        }
+
+        .question-content0 img {
+            transform: translateX(-30%);
+            margin-top: 5%;
+        }
+
+        .question-content1 img {
+            transform: translateX(-40%);
+            margin-top: 5%;
+        }
+
+        .question-content2 img {
+            transform: translateX(-50%);
+            margin-top: 5%;
+        }
+
+        .question-content3 img {
+            transform: translateX(-60%);
+            margin-top: 5%;
+        }
+
+        /* .box .p1.show .answers p {
+            width: 50%;
+            height: 10%;
+            text-align: center;
+            position: absolute;
+            left: 25%;
+            top: 35%;
+            z-index: 8;
+            display: block;
+            overflow: hidden;
+            width: 0;
+            white-space: nowrap;
+            animation: a1 12s steps(32) 1s forwards;
+        } */
+
+
+        .p.p1.show,
+        .p.p2.show,
+        .p.p3.show,
+        .p.p4.show {
+            z-index: 1009;
+        }
+
+        .p.p1,
+        .p.p2,
+        .p.p3,
+        .p.p4 {
+            z-index: 1008;
+        }
+
+        .nav {
+            position: absolute;
+            width: 129px;
+            top: 200px;
+            right: 160px;
+            z-index: 1010;
+        }
+
+        .nav li {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            margin: 1px auto 0;
+            cursor: pointer;
+            transition: all .6s linear;
+        }
+
+        .nav li img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 129px;
+            height: 129px;
+        }
+
+        .nav li i {
+            position: absolute;
+            top: 0;
+            left: 100%;
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+            transition: opacity .6s linear;
+        }
+
+        .nav li.t1 i {
+            background: url(images/名片/可回收框.png) no-repeat center;
+        }
+
+        .nav li.t2 i {
+            background: url(images/名片/其他框.png) no-repeat center;
+        }
+
+        .nav li.t3 i {
+            background: url(./images/名片/厨余框.png) no-repeat center;
+        }
+
+        .nav li.t4 i {
+            background: url(./images/名片/有害框.png) no-repeat center;
+        }
+
+        .nav li em {
+            position: absolute;
+            top: 0;
+            left: 100%;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity .6s linear;
+        }
+
+        .nav li.t1 em {
+            background: url(./images/名片/可回收名片.png) no-repeat center;
+        }
+
+        .nav li.t2 em {
+            background: url(./images/名片/其他名片.png) no-repeat center;
+        }
+
+        .nav li.t3 em {
+            background: url(./images/名片/厨余名片.png) no-repeat center;
+        }
+
+        .nav li.t4 em {
+            background: url(./images/名片/有害名片.png) no-repeat center;
+        }
+
+        .nav li.on {
+            width: 129px;
+            height: 129px;
+        }
+
+        .nav li.on i {
+            opacity: 0;
+        }
+
+        .nav li.on em {
+            opacity: 1;
+        }
+
+        .musicOnOff {
+            z-index: 2000;
+            cursor: pointer;
+            width: 110px;
+            height: 80px;
+            /* background-color: #f7f4cd; */
+            position: absolute;
+            left: 3%;
+            top: 5%;
+
+            /* border: rgb(68, 68, 68) 2px solid;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; */
+        }
+
+        .musicOnOff img {
+            width: 110px;
+            height: 80px;
+        }
+
+
+
+        /* ----------------------------------------------
+ * Generated by Animista on 2021-5-17 14:37:49
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+        /**
+ * ----------------------------------------
+ * animation scale-in-left
+ * ----------------------------------------
+ */
+        @-webkit-keyframes scale-in-left {
+            0% {
+                -webkit-transform: scale(0);
+                transform: scale(0);
+                -webkit-transform-origin: 0% 50%;
+                transform-origin: 0% 50%;
+                opacity: 1;
+            }
+
+            100% {
+                -webkit-transform: scale(1);
+                transform: scale(1);
+                -webkit-transform-origin: 0% 50%;
+                transform-origin: 0% 50%;
+                opacity: 1;
+            }
+        }
+
+        @keyframes scale-in-left {
+            0% {
+                -webkit-transform: scale(0);
+                transform: scale(0);
+                -webkit-transform-origin: 0% 50%;
+                transform-origin: 0% 50%;
+                opacity: 1;
+            }
+
+            100% {
+                -webkit-transform: scale(1);
+                transform: scale(1);
+                -webkit-transform-origin: 0% 50%;
+                transform-origin: 0% 50%;
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body ondragstart="return false">
+    <audio src="images/陈致逸,HOYO-MiX - Moonlike Smile 皎洁的笑颜.mp3" loop class="back-music"></audio>
+    <div class="musicOnOff"><img src="images/返回2.png"></div>
+
+    <div class="container bg-t1 ">
+        <div class="nav">
+            <ul>
+                <li class="item t1 on">
+                    <i></i>
+                    <em></em>
+                </li>
+                <li class="item t2">
+                    <i></i>
+                    <em></em>
+                </li>
+                <li class="item t3">
+                    <i></i>
+                    <em></em>
+                </li>
+                <li class="item t4">
+                    <i></i>
+                    <em></em>
+                </li>
+            </ul>
+        </div>
+        <div class="box">
+            <div class="p p1 show">
+                <div class="p1-bj">
+                    <!-- <span class="name">
+                        <div>
+                            <a href="#" class="trigger-custom1"><img src="./images/其他1.png" class="show" alt="我是按钮"
+                                    style="left: 0;bottom: 68.5%;"></a>
+                        </div>
+                    </span> -->
+                    <span class="questions">
+                        <div class="show">
+                            <a  class="question-content0 "><img src="./images/t1_1.png" class="show"
+                                    alt="我是按钮"></a>
+                        </div>
+                        <div>
+                            <a  class="question-content1"><img src="./images/t1_2.png" alt="我是按钮"></a>
+                        </div>
+                        <div>
+                            <a  class="question-content2"><img src="./images/t1_3.png" alt="我是按钮"></a>
+                        </div>
+                        <div>
+                            <a  class="question-content3"><img src="./images/t1_4.png" alt="我是按钮"></a>
+                        </div>
+                    </span>
+                    <span class="answers">
+                        <div>
+                            <a><img src="images/可回收对话/对话1/答1.png"></a>
+                        </div>
+                        <div>
+                            <a><img src="images/可回收对话/对话1/答1.png"></a>
+                        </div>
+                        <div>
+                            <a><img src="images/可回收对话/对话1/答1.png"></a>
+                        </div>
+                        <div>
+                            <a><img src="images/可回收对话/对话1/答1.png"></a>
+                        </div>
+
+                    </span>
+                    <img class="per" src="./images/可回收.png" alt="">
+                </div>
+
+            </div>
+            <div class="p p2">
+                <!-- <span class="name">
+                    <div>
+                        <a href="#" class="trigger-custom1"><img src="./images/其他垃圾按钮.png" class="show" alt="我是按钮"
+                                style="left: 0;bottom: 68.5%;"></a>
+                    </div>
+                </span> -->
+                <span class="questions">
+                    <div class="show">
+                        <a class="question-content1"><img src="images/其他1.png" alt="我是按钮"
+                                style="top: 5.5%;"></a>
+                    </div>
+                    <div>
+                        <a class="question-content1"><img src="images/其他2.png" alt="我是按钮"
+                                style="top: 10.5%;"></a>
+                    </div>
+                    <div>
+                        <a class="question-content2"><img src="images/其他3.png" alt="我是按钮"
+                                style="top: 25.5%;"></a>
+                    </div>
+                    <div>
+                        <a class="question-content3"><img src="images/4qt.jpg" alt="我是按钮"
+                                style="top: 40.5%;"></a>
+                    </div>
+                </span>
+                <span class="answers">
+                    <div>
+                        <a><img class="" src="images/其他对话/对话1/答1.png"></a>
+                    </div>
+                    <div>
+                        <a><img class="" src="images/其他对话/对话1/答1.png"></a>
+                    </div>
+                    <div>
+                        <a><img src="images/其他对话/对话1/答1.png"></a>
+                    </div>
+                    <div>
+                        <a><img src="images/其他对话/对话1/答1.png"></a>
+                    </div>
+                </span>
+                <img class="per" src="./images/其他.png" alt="">
+            </div>
+            <div class="p p3">
+                <!-- <span class="name">
+                    <div>
+                        <a href="#" class="trigger-custom1"><img src="./images/厨余按钮.png" class="show" alt="我是按钮"
+                                style="left: 0;bottom: 68.5%;"></a>
+                    </div>
+                </span> -->
+                <span class="questions">
+                    <div class="show">
+                        <a class="question-content1"><img src="images/厨余1.png" alt="我是按钮"
+                                style="top: 5.5%;"></a>
+                    </div>
+                    <div>
+                        <a class="question-content1"><img src="images/厨余2.png" alt="我是按钮"
+                                style="top: 10.5%;"></a>
+                    </div>
+                    <div>
+                        <a class="question-content2"><img src="images/厨余3.png" alt="我是按钮"
+                                style="top: 25.5%;"></a>
+                    </div>
+                    <div>
+                        <a class="question-content3"><img src="images/4cy.jpg" alt="我是按钮"
+                                style="top: 40.5%;"></a>
+                    </div>
+                </span>
+                <span class="answers">
+                    <div>
+                        <a><img class="" src="images/厨余对话/对话1/答1.png"></a>
+                    </div>
+                    <div>
+                        <a><img class="" src="images/厨余对话/对话1/答1.png"></a>
+                    </div>
+                    <div>
+                        <a><img src="images/厨余对话/对话1/答1.png"></a>
+                    </div>
+                    <div>
+                        <a><img src="images/厨余对话/对话1/答1.png"></a>
+                    </div>
+                </span>
+                <img class="per" src="./images/厨余.png" alt="">
+            </div>
+            <div class="p p4">
+                <!-- <span class="name">
+                    <div>
+                        <a href="#" class="trigger-custom1"><img src="./images/有害按钮.png" class="show" alt="我是按钮"
+                                style="left: 0;bottom: 68.5%;"></a>
+                    </div>
+                </span> -->
+                <span class="questions">
+                    <div class="show">
+                        <a class="question-content1"><img src="images/有害1.png" alt="我是按钮"
+                                style="top: 5.5%;"></a>
+                    </div>
+                    <div>
+                        <a class="question-content1"><img src="images/有害2.png" alt="我是按钮"
+                                style="top: 10.5%;"></a>
+                    </div>
+                    <div>
+                        <a class="question-content2"><img src="images/有害3.png" alt="我是按钮"
+                                style="top: 25.5%;"></a>
+                    </div>
+                    <div>
+                        <a class="question-content3"><img src="images/有害4.png" alt="我是按钮"
+                                style="top: 40.5%;"></a>
+                    </div>
+                </span>
+                <span class="answers">
+                    <div>
+                        <a><img class="" src="images/有害对话/对话1/答1.png"></a>
+                    </div>
+                    <div>
+                        <a><img class="" src="images/有害对话/对话1/答1.png"></a>
+                    </div>
+                    <div>
+                        <a><img src="images/有害对话/对话1/答1.png"></a>
+                    </div>
+                    <div>
+                        <a><img src="images/有害对话/对话1/答1.png"></a>
+                    </div>
+                </span>
+                <img class="per" src="./images/有害.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $('.nav li').on('click', function () {
+                $(this).addClass('on').siblings().removeClass('on');
+                $('.p').eq($(this).index()).addClass('show').siblings().removeClass('show');
+
+                // console.log(document.getElementsByClassName('container')[0].classList[1]);
+                // console.log("bg-" + this.classList[1]);
+
+                document.getElementsByClassName('container')[0].className = "container bg-" + this.classList[1]
+
+            })
+
+            // $(".container").css("height", innerHeight)
+            // console.log(innerHeight);
+        })
+    </script>
+    <script src="js/index.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,222 @@
+@font-face {
+  font-family: muyao;
+  src: url('../ttf/muyao.ttf');
+}
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+body {
+  background-image: url('../pic/夜空2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.earth {
+  width: 100%;
+  height: 900px;
+}
+.earth .earth1 {
+  top: 40%;
+  left: 0;
+  right: 0;
+  position: fixed;
+  margin: 0 auto;
+  z-index: 1001;
+  width: 200px;
+  height: 200px;
+  animation: bounceInUp 1.3s;
+  transition: width 0.4s ease-out, height 0.4s ease-out, top 0.4s ease-out;
+}
+.earth .earth_text {
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  position: fixed;
+  top: 13%;
+  z-index: 1005;
+  animation: bounceInUp 1.3s;
+  color: #112c3f;
+}
+.earth .earth_text canvas {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  opacity: 0;
+}
+.earth .earth_text .img1 {
+  width: 565px;
+  height: 166px;
+  position: absolute;
+  z-index: 1;
+  opacity: 1;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.earth .earth_text .img2 {
+  width: 565px;
+  height: 166px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.xiangxia .xiangxia1 {
+  position: absolute;
+  left: 50%;
+  top: 87%;
+  transform: translateX(-50%);
+  margin: 0 auto;
+  font-size: 40px;
+  opacity: 1;
+  animation: opacityXiangxia 2s infinite;
+}
+.xiangxia .xiangxia2 {
+  position: absolute;
+  left: 50%;
+  top: 87%;
+  transform: translateX(-50%);
+  margin: 0 auto;
+  font-size: 40px;
+  opacity: 1;
+  animation: opacityXiangxia 2s infinite;
+  padding-top: 13px;
+  animation-delay: 0.1s;
+}
+.xiangxia .xiangxia3 {
+  position: absolute;
+  left: 50%;
+  top: 87%;
+  transform: translateX(-50%);
+  margin: 0 auto;
+  font-size: 40px;
+  opacity: 1;
+  animation: opacityXiangxia 2s infinite;
+  padding-top: 26px;
+  animation-delay: 0.2s;
+}
+.transitionLayer .img1 {
+  width: 100%;
+  height: 90%;
+  position: fixed;
+  z-index: 999;
+  top: 10%;
+  opacity: 1;
+}
+.transitionLayer > img:nth-child(2) {
+  width: 100%;
+  height: 90%;
+  position: fixed;
+  z-index: 999;
+  top: 10%;
+  opacity: 1;
+  z-index: 998;
+}
+.transitionLayer .img3,
+.transitionLayer .img4 {
+  width: 100%;
+  height: 90%;
+  position: fixed;
+  z-index: 999;
+  top: 10%;
+  z-index: 997;
+  opacity: 1;
+}
+.home {
+  width: 100%;
+  height: 800px;
+  position: relative;
+  overflow: hidden;
+}
+.home .home_cloud li {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  right: 10%;
+}
+.home .home_cloud li.cloud1 {
+  top: 20%;
+  z-index: 1003;
+  animation: run 26s linear infinite;
+  animation-delay: -13s;
+}
+.home .home_cloud li.cloud2 {
+  top: 70%;
+  z-index: 999;
+  animation: run 31s linear infinite;
+}
+.home .home_cloud li.cloud3 {
+  top: 25%;
+  z-index: 1002;
+  animation: run 24s linear infinite;
+  animation-delay: -5s;
+}
+.home .home_cloud li.cloud4 {
+  top: 10%;
+  z-index: 1010;
+  animation: run 21s linear infinite;
+}
+.home .garbage .wk {
+  cursor: pointer;
+  width: 200px;
+  height: 180px;
+  background-size: cover;
+  position: absolute;
+  transform: rotate(-30deg);
+  animation: wkzou 1s steps(8) infinite;
+}
+.home .garbage .bj {
+  cursor: pointer;
+  width: 200px;
+  height: 180px;
+  position: absolute;
+  transform: rotate(-15deg);
+  animation: bjzou 1s steps(8) infinite;
+}
+.home .garbage .ts {
+  cursor: pointer;
+  width: 170px;
+  height: 240px;
+  position: absolute;
+  transform: rotate(8deg);
+  animation: tszou 1s steps(8) infinite;
+}
+.home .garbage .ss {
+  cursor: pointer;
+  width: 210px;
+  height: 200px;
+  position: absolute;
+  transform: rotate(25deg);
+  animation: sszou 1s steps(8) infinite;
+}
+@keyframes dong {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 1920px;
+  }
+}
+@keyframes wkzou {
+  to {
+    background-position: -1600px 0;
+  }
+}
+@keyframes bjzou {
+  to {
+    background-position: -1600px 0;
+  }
+}
+@keyframes tszou {
+  to {
+    background-position: -1360px 0;
+  }
+}
+@keyframes sszou {
+  to {
+    background-position: -1680px 0;
+  }
+}

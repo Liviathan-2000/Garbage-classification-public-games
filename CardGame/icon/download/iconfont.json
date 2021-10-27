@@ -1,0 +1,16 @@
+{
+  "id": "2279417",
+  "name": "no name",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "15001619",
+      "name": "返回",
+      "font_class": "fanhui",
+      "unicode": "e659",
+      "unicode_decimal": 58969
+    }
+  ]
+}

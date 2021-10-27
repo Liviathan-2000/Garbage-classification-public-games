@@ -1,0 +1,68 @@
+
+@keyframes run {
+    0%{
+        right:-10%;
+        opacity: 0;
+    }
+    10%{
+        opacity: 1;
+    }
+    100%{
+        right:120%;
+    }
+
+}
+
+/* 地球下滑的动画 */
+@keyframes downRun{
+    0%{
+        top: 30%;
+        width: 150px;
+        height: 150px;
+
+
+    }
+    100%{
+        top: 60%;
+        left: 6%;
+        width: 1500px;
+        height: 1500px;
+    }
+}
+
+/* 地球自转的动画 */
+@keyframes rotation {
+    0%{
+        transform:rotate(0deg);
+    }
+    100%{
+        transform:rotate(360deg);
+    }
+}
+
+/* 文字影子 */
+@keyframes changeShadow {
+    0%{
+        font-size: 50px;
+        /* opacity: 1; */
+    }
+
+    100%{
+        font-size: 200px;
+        /* opacity: 0; */
+    }
+}
+/* 下降的提示 */
+@keyframes opacityXiangxia{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+
+
+

@@ -1,0 +1,30 @@
+{
+  "id": "2276695",
+  "name": "图标",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "4520167",
+      "name": "喇叭",
+      "font_class": "laba",
+      "unicode": "e68b",
+      "unicode_decimal": 59019
+    },
+    {
+      "icon_id": "16322392",
+      "name": "搜索",
+      "font_class": "sousuo",
+      "unicode": "e6d2",
+      "unicode_decimal": 59090
+    },
+    {
+      "icon_id": "17675152",
+      "name": "callin",
+      "font_class": "callin",
+      "unicode": "e62b",
+      "unicode_decimal": 58923
+    }
+  ]
+}

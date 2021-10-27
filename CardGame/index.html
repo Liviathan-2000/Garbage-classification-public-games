@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>翻牌游戏</title>
+    <link href="css/game2.css" rel="stylesheet" />
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="icon/download/iconfont.css">
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+
+</head>
+
+<body ondragstart="return false">
+    <audio src="pic/翻动纸张的页面_耳聆网_[声音ID：17018].mp3" class="card-music"></audio>
+    <audio src="pic/CMJ - 所念皆星河.mp3" class="back-music" loop></audio>
+    <!-- <div class="back"><span class="iconfont icon-fanhui"></span></div> -->
+    <div class="back"><img src="pic/返回2.png"></div>
+    <!-- 欢迎页  -->
+    <div class="welcome">
+        <!-- 主体部分  -->
+        <div class="welcome-main">
+            <!-- 标题 -->
+            <!-- 按钮 -->
+            <div class="welcome-main-button">
+                <a class="button"><img src="./pic/button.png" alt=""></a>
+            </div>
+        </div>
+    </div>
+    <!-- 便签纸 -->
+    <div class="note">
+        <div>
+            <p>
+                <a class="title">油漆桶</a>
+                <a>有害垃圾</a>
+            </p>
+        </div>
+    </div>
+    <!-- 主要内容 -->
+    <div class="content">
+        <!-- 中部游戏主体 -->
+        <div class="content-game">
+            <!-- <div class="game-card">
+                <div class="game-card-childUp"></div>
+                <div class="game-card-childDown"></div>
+            </div> -->
+
+            <!-- <div class="game-card"></div> -->
+            <!-- <div class="game-card"></div>
+            <div class="game-card"></div>
+            <div class="game-card"></div>
+            <div class="game-card"></div>
+            <div class="game-card"></div>
+            <div class="game-card"></div>
+            <div class="game-card"></div>
+            <div class="game-card"></div>
+            <div class="game-card"></div>
+            <div class="game-card"></div>
+            <div class="game-card"></div>
+            <div class="game-card"></div>
+            <div class="game-card"></div>
+            <div class="game-card"></div>
+            <div class="game-card"></div>
+            <div class="game-card"></div>
+            <div class="game-card"></div>
+            <div class="game-card"></div>
+            <div class="game-card"></div>
+            <div class="game-card"></div>
+            <div class="game-card"></div>
+            <div class="game-card"></div> -->
+        </div>
+    </div>
+
+    <!-- 游戏结束画面 -->
+    <div class="end">
+        
+    </div>
+    <script src='js/data.js'></script>
+    <script src="js/index.js"></script>
+    <script>
+        document.onselectstart = function() {
+            return false;
+        };
+    </script>
+</body>
+
+</html>

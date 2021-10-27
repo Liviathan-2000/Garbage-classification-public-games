@@ -1,0 +1,382 @@
+@font-face {
+    /* font-properties */
+    font-family: muyao;
+    src: url('../ttf/muyao.ttf')
+    /* url('pictos/pictos-web.eot'); IE9 */
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+/* 音频控件 */
+
+.musicOnOff {
+    z-index: 2000;
+    cursor: pointer;
+    width: 110px;
+    height: 80px;
+    /* background-color: #f7f4cd; */
+    position: absolute;
+    left: 3%;
+    top: 5%;
+   
+    /* border: rgb(68, 68, 68) 2px solid;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; */
+}
+
+.musicOnOff img {
+    width: 110px;
+    height: 80px;
+    }
+
+
+/* 背景音乐图 */
+
+.bugle {
+    width: 110px;
+    height: 80px;
+    position: absolute;
+    z-index: 1010;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.bugle_ban {
+    width: 90px;
+    height: 80px;
+    position: absolute;
+    z-index: 1010;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+
+/* 提示图标 */
+
+.hint img {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 250px;
+    left: 60%;
+    z-index: 1007;
+    display: none;
+}
+
+.ash-bin img {
+    width: 190px;
+    height: 220px;
+    transition: transform ease-out;
+    /* animation: Pulse 4s; */
+}
+
+.ash-bin div {
+    overflow: hidden;
+    position: absolute;
+    bottom: 4%;
+    /* float: left; */
+    /* margin-left: 54px; */
+    padding: 20px;
+    /* position: absolute; */
+    /*z-index: 1000;*/
+    /* background-color: #fefefe; */
+}
+
+#gameRange {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    /* padding: 5%; */
+    background-image: url(../pic/约定的垃圾桶背景.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#rubbish div {
+    position: relative;
+}
+
+#rubbish div img {
+    position: absolute;
+    /* z-index: 1003; */
+}
+
+#welcomeScreenBack {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url('../pic/背景.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1000;
+}
+
+.gameOverScreen {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url('../pic/游戏结束.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    display: none;
+}
+
+.gameOverScreen div {
+    width: 10%;
+    height: 15%;
+    padding-top: 10%;
+}
+
+.gameOverScreen div button {
+    width: 100%;
+    height: 30%;
+    margin-top: 10px;
+}
+
+
+#welcomeScreen,
+.againScreenBack {
+    width: 100%;
+    height: 250px;
+    text-align: center;
+    /*内部文字按钮居中*/
+    position: absolute;
+    z-index: 1001;
+    left: 88%;
+    top: 54%;
+    transform: translate(-50%, -50%);
+}
+
+#welcomeScreen p,
+.againScreenBack p {
+    font-size: 45px;
+    letter-spacing: 5px;
+    /*字间距*/
+    margin-top: 60px;
+}
+
+#welcomeScreen button,
+.againScreenBack button {
+    cursor: pointer;
+    border: hidden;
+    background-color: transparent;
+    background-image: url(../pic/开始按钮.png);
+    cursor: pointer;
+    background-repeat: no-repeat;
+    width: 320px;
+    height: 90%;
+}
+#welcomeScreen button:hover{
+    animation: wobble-hor-bottom 1.5s;
+}
+
+.againScreenBack {
+    display: none;
+}
+
+#integral-text {
+    width: 200px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 30px;
+    font-family: muyao;
+    color: green;
+}
+
+
+/* 知识科普大截面 */
+
+
+/* .poScience{
+  position: absolute;
+  /* background-color: #a71d2a; */
+
+
+/* }  */
+
+.poScience li {
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: absolute;
+    /* margin-top: 90px; */
+    overflow: hidden;
+    z-index: 1005;
+    /* background-image: url('../pic/未标题-1-恢复的.png'); */
+    background-color: rgba(255, 255, 255, 0.5);
+    /* padding: 7px; */
+}
+
+.poScience img {
+    width: 80;
+    height: 80%;
+    margin-top: 14%;
+    margin-left: 10%;
+}
+
+
+
+/*箱子发光效果*/
+
+@keyframes blowUpRight {
+    from {}
+    to {
+        box-shadow: 0 0 10px #1c7430;
+    }
+}
+
+@keyframes blowUpError {
+    from {}
+    to {
+        box-shadow: 0 0 10px #a71d2a;
+    }
+}
+
+
+/*箱子离开发光效果*/
+
+@keyframes blowLeaveRight {
+    from {
+        box-shadow: 0 0 10px #1c7430;
+    }
+    to {
+        box-shadow: none;
+    }
+}
+
+@keyframes blowLeaveError {
+    from {
+        box-shadow: 0 0 10px #a71d2a;
+    }
+    to {
+        box-shadow: none;
+    }
+}
+
+@keyframes Pulse {
+    from {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+    50% {
+        -webkit-transform: scale3d(1.2, 1.2, 1.2);
+        transform: scale3d(1.2, 1.2, 1.2);
+    }
+    to {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+
+/* 结束时候 */
+
+#repeat {
+    height: 200px;
+    cursor: pointer;
+    width: 300px;
+    background-image: url(../pic/再玩一次按钮.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: transparent;
+    border: hidden;
+    position: absolute;
+    right: 300px;
+    bottom: -2px;
+}
+#repeat:hover{
+    animation: wobble-hor-bottom 1.5s;
+}
+/* ----------------------------------------------
+ * Generated by Animista on 2021-5-26 21:13:34
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation wobble-hor-bottom
+ * ----------------------------------------
+ */
+ @-webkit-keyframes wobble-hor-bottom {
+    0%,
+    100% {
+      -webkit-transform: translateX(0%);
+              transform: translateX(0%);
+      -webkit-transform-origin: 50% 50%;
+              transform-origin: 50% 50%;
+    }
+    15% {
+      -webkit-transform: translateX(-30px) rotate(-6deg);
+              transform: translateX(-30px) rotate(-6deg);
+    }
+    30% {
+      -webkit-transform: translateX(15px) rotate(6deg);
+              transform: translateX(15px) rotate(6deg);
+    }
+    45% {
+      -webkit-transform: translateX(-15px) rotate(-3.6deg);
+              transform: translateX(-15px) rotate(-3.6deg);
+    }
+    60% {
+      -webkit-transform: translateX(9px) rotate(2.4deg);
+              transform: translateX(9px) rotate(2.4deg);
+    }
+    75% {
+      -webkit-transform: translateX(-6px) rotate(-1.2deg);
+              transform: translateX(-6px) rotate(-1.2deg);
+    }
+  }
+  @keyframes wobble-hor-bottom {
+    0%,
+    100% {
+      -webkit-transform: translateX(0%);
+              transform: translateX(0%);
+      -webkit-transform-origin: 50% 50%;
+              transform-origin: 50% 50%;
+    }
+    15% {
+      -webkit-transform: translateX(-30px) rotate(-6deg);
+              transform: translateX(-30px) rotate(-6deg);
+    }
+    30% {
+      -webkit-transform: translateX(15px) rotate(6deg);
+              transform: translateX(15px) rotate(6deg);
+    }
+    45% {
+      -webkit-transform: translateX(-15px) rotate(-3.6deg);
+              transform: translateX(-15px) rotate(-3.6deg);
+    }
+    60% {
+      -webkit-transform: translateX(9px) rotate(2.4deg);
+              transform: translateX(9px) rotate(2.4deg);
+    }
+    75% {
+      -webkit-transform: translateX(-6px) rotate(-1.2deg);
+              transform: translateX(-6px) rotate(-1.2deg);
+    }
+  }
+  
